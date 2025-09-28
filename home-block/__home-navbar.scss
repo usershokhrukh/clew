@@ -175,3 +175,18 @@ $fourth-color: #0090C4;
 
   
 }
+
+
+@media (max-width: 1000px) {
+  .navbar__left-list {
+    display: none;
+  }
+  
+  .navbar__left-logo {
+    position: absolute;
+  }
+
+  .navbar__right-media {
+    display: none;
+  }
+}
