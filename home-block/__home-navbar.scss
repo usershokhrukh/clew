@@ -1,13 +1,25 @@
 // $first-color: #212121;
 $first-color: #303030;
 $second-color: #8E8E8E;
-$third-color: #F2F2F2;
+$third-color: #f6f6f677;
+$fiveth-color: #f6f6f6;
+$fourth-color: #0090C4;
+
+.navbar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: start;
+}
 
 .navbar {
+  position: fixed;
+  top: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
+  height: auto;
+
 
   &__left-contain {
     display: flex;
@@ -42,17 +54,11 @@ $third-color: #F2F2F2;
   &__left-items:hover .navbar__left-drop-div {
     position: absolute;
     top: 50px;
+    transition: all 0.2s ease;
     visibility: visible;
     transform: scale(1);
     opacity: 1;
   }
-  // &__left-items:focus .navbar__left-drop-div {
-  //   position: absolute;
-  //   top: 50px;
-  //   visibility: visible;
-  //   transform: scale(1);
-  //   opacity: 1;
-  // }
 
   &__left-items {
     position: relative;
@@ -64,14 +70,11 @@ $third-color: #F2F2F2;
 
   &__left-drop-div {
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 0px;
-    width: 265px;
-    transform: scale(0.4);
 
     visibility: hidden;
-    transition: all 0.2s ease;
-    padding: 30px 0px 40px 20px;
+    padding: 30px 10px 40px 20px;
     background-color: $third-color;
     border-radius: 5px;
     opacity: 0;
@@ -81,11 +84,19 @@ $third-color: #F2F2F2;
       font-size: 20px;
     }
   }
+  &__left-drop-div-item {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__left-drop-list {
     display: flex;
     flex-direction: column;
     gap: 23px;
+  }
+
+  &__left-drop-div-title:hover {
+    color: #0090C4 !important;
   }
 
   &__left-drop-div-title {
@@ -98,6 +109,7 @@ $third-color: #F2F2F2;
     font-size: 10px; 
     color: $first-color;
     opacity: 0.7;
+    width: 280px;
   }
 
   &__left-drop-div-links {
@@ -110,7 +122,53 @@ $third-color: #F2F2F2;
     color: $first-color;
   }
 
+  &__select {
+    position: relative;
+    border: 1px solid $first-color;
+    border-radius: 3px;
+    color: $first-color;
+  }
 
+
+  &__opt {
+    border-radius: 3px;
+  }
+
+  &__right-contain {
+    display: flex;
+    align-items: center;
+    gap: calc(1rem + 4px);
+  }
+
+  &__right-contain-div {
+    display: flex;
+    align-items: center;
+    gap: calc(1rem - 11px);
+
+  }
+
+  &__btn {
+    padding: 4px 15px;
+    font-size: 14px;
+    color: $first-color;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+  }
+
+  &__btn:hover {
+    opacity: 0.7;
+  }
+
+  &__btn-left {
+    background-color: inherit;
+    // border: 1px solid $first-color;
+  }
+
+  &__btn-right {
+    background-color: $fourth-color;
+    color: $fiveth-color;
+  }
 
 
 
