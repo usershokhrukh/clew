@@ -12,7 +12,7 @@ $fourth-color: #0090C4;
 }
 
 .navbar {
-  position: fixed;
+  // position: fixed;
   top: 0px;
   display: flex;
   align-items: center;
@@ -84,6 +84,12 @@ $fourth-color: #0090C4;
       font-size: 20px;
     }
   }
+
+  &__right-center-contain {
+    display: flex;
+    align-items: center;
+  }
+
   &__left-drop-div-item {
     display: flex;
     flex-direction: column;
@@ -92,17 +98,19 @@ $fourth-color: #0090C4;
   &__left-drop-list {
     display: flex;
     flex-direction: column;
-    gap: 23px;
+    gap: 10px;
   }
 
   &__left-drop-div-title:hover {
     color: #0090C4 !important;
+    transform: translateY(-3px);
   }
 
   &__left-drop-div-title {
     font-size: 14px; 
     font-weight: 600;
     color: $first-color;
+    transition: all 0.2s ease;
   }
 
   &__left-drop-div-subtext {
@@ -148,8 +156,8 @@ $fourth-color: #0090C4;
   }
 
   &__btn {
-    padding: 4px 15px;
-    font-size: 14px;
+    padding: 7px 18px;
+    font-size: 10px;
     color: $first-color;
     font-weight: 500;
     border-radius: 5px;
@@ -172,21 +180,180 @@ $fourth-color: #0090C4;
 
 
 
-
-  
-}
-
-
-@media (max-width: 1000px) {
-  .navbar__left-list {
+  &__center-contain {
+    position: relative;
     display: none;
+
   }
-  
-  .navbar__left-logo {
+
+  &__center-containitem {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: none;
+    background-color: inherit;
+  }
+
+  &__center-containitem:hover {
+    .navbar__center-div {
+      position: relative;
+      top: 0px;
+      transform: scale(1);
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+
+  &__center-div {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    height: 40vw;
+    padding: 10px 0px;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $third-color;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+  }
+
+  &__center-drop-item{
+    background-color: red;
+    width: 0px;
+  }
+
+  .navbar__center-menu {
+    position: relative;
+    border-bottom: 1px solid $first-color;
+    padding: 10px 20px 5px 0px; 
+    font-size: 10px;
+   }
+
+  &__center-wrapper {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  &__center-items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+  }
+
+  &__center-items-top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+  }
+
+
+  &__center-items-icon {
+    position: absolute;
+    top: 14px;
+    right: -5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__center-drop-div-title {
+    font-size: 10px;
+  }
+  &__center-drop-div-subtext {
+    font-size: 7px;
+    width: 100px;
+  }
+
+  &__center-drop-list {
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    width: 120px;
+    visibility: hidden;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $first-color;
+  }
+
+  &__center-items-icon-div {
+    border: none;
+    background-color: inherit;
+    text-align: start;
+  }
+
+&__center-items-icon-div:focus .navbar__center-drop-list {
+  position: relative;  
+  top: 5px;
+    opacity: 1;
+    visibility: visible;
+
+  .navbar__center-drop-div-title, .navbar__center-drop-div-subtext{
+    color: $fiveth-color
+  }
+  // .navbar__center-drop-div-subtext {
+  //   color: $third-color
+  // }
+  }
+
+  .buttons {
     position: absolute;
   }
 
+
+
+
+  
+ &__center-icon {
+  transition: all 0.1s ease;
+ }
+
+
+
+ &__center-items-icon-div:focus .navbar__center-items-icon {
+    transform: rotate(90deg);
+
+ }
+
+ &__center-btn {
+  background-color: $first-color;
+  color: $fiveth-color;
+  width: 130px;
+ }
+
+
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+  .navbar__left-list {
+    display: none;
+  }
   .navbar__right-media {
     display: none;
+  }
+
+  .navbar__center-contain {
+    display: block;
   }
 }
